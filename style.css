@@ -2,6 +2,8 @@ body{
     font-family: Tahoma;
     color: #444;
     letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
 }
 
 #book-list h1{
@@ -31,7 +33,6 @@ h1, h2{
 #page-banner{
     background: #eee ;
     padding: 10px 0;
-
 }
 
 #page-banner h1, #page-banner p{
@@ -70,6 +71,10 @@ h1, h2{
     padding: 20px;
     border-right: 5px solid #ddd;
     margin: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #book-list li:hover{
@@ -77,16 +82,19 @@ h1, h2{
 }
 
 .delete{
-    float: left;
     background: #9361bf;
-    padding: 6px;
+    padding: 6px 12px;
     border-radius: 4px;
     cursor: pointer;
     color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 10px;
 }
 
 .name{
-    float: right;
+    flex: 1;
+    text-align: right;
 }
 
 .delete:hover{
@@ -94,7 +102,8 @@ h1, h2{
 }
 
 #add-book{
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -106,7 +115,7 @@ h1, h2{
     font-size: 16px;
     border-radius: 4px 0 0 4px;
     box-sizing: border-box;
-    width: 300px;
+    width: calc(100% - 80px);
     float: left;
 }
 
@@ -143,4 +152,131 @@ h1, h2{
 
 #add-book #hide{
     width: 30px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #container {
+        width: 95%;
+        margin: 10px auto;
+    }
+    
+    #book-list, #add-book, #tabbed-content {
+        margin: 20px 15px;
+    }
+    
+    #book-list h2 {
+        float: none;
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+    
+    #book-list li {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        margin: 15px 5px;
+    }
+    
+    .name {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .delete {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    #add-book {
+        width: 90%;
+        max-width: none;
+    }
+    
+    #add-book input {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    #add-book .button {
+        width: 100%;
+        border-radius: 4px;
+        border-left: 1px solid #9361bf;
+    }
+    
+    #hide {
+        float: none;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    #page-banner input {
+        width: 85%;
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #container {
+        width: 98%;
+        margin: 5px auto;
+    }
+    
+    #book-list, #add-book, #tabbed-content {
+        margin: 15px 10px;
+    }
+    
+    #book-list li {
+        padding: 10px;
+        margin: 10px 2px;
+    }
+    
+    #page-banner h1 {
+        font-size: 24px;
+    }
+    
+    #book-list h2 {
+        font-size: 20px;
+    }
+    
+    #add-book input {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    #add-book .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    #page-banner input {
+        font-size: 14px;
+        padding: 6px;
+    }
+    
+    .delete {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #container {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    #book-list, #add-book, #tabbed-content {
+        margin: 10px 5px;
+    }
+    
+    #page-banner h1 {
+        font-size: 20px;
+    }
+    
+    #book-list h2 {
+        font-size: 18px;
+    }
 }
